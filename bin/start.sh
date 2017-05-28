@@ -5,6 +5,10 @@ if [ -z "${SERVICE_ROOT}" ]; then
     export SERVICE_ROOT=`cd "${WHEREAMI}/../" && pwd`
 fi
 
+if [ -z "${LOG_LEVEL}" ]; then
+    export LOG_LEVEL="info"
+fi
+
 SERVICE_LIB=${SERVICE_ROOT}/lib
 SERVICE_ETC=${SERVICE_ROOT}/etc
 export SERVICE_LOG=${SERVICE_ROOT}/log
