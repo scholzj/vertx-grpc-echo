@@ -10,3 +10,5 @@ cp -r -v ./target/vertx-grpc-echo-1.0-SNAPSHOT/vertx-grpc-echo-1.0-SNAPSHOT ./do
 docker build -t scholzj/vertx-grpc-echo:latest ./docker/
 docker tag -f scholzj/vertx-grpc-echo:latest docker.io/scholzj/vertx-grpc-echo:latest
 docker push scholzj/vertx-grpc-echo:latest
+
+rm -rf ./docker/vertx-grpc-echo-1.0-SNAPSHOT
