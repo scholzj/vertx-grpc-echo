@@ -116,7 +116,7 @@ public class Echo extends AbstractVerticle {
         }
 
         if (rpcServer != null) {
-            rpcServer.shutdownNow();
+            rpcServer.shutdown();
         }
 
         LOG.info("Shutting down");
