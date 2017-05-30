@@ -54,7 +54,7 @@ public class Echo extends AbstractVerticle {
                     service = new EchoGrpc.EchoVertxImplBase() {
                         @Override
                         public void echo(EchoRequest request, Future<EchoReply> response) {
-                            LOG.info("Received request: {}", request.getMessage());
+                            LOG.info("Received request: {} ({})", request.getMessage(), counter.incrementAndGet());
                             response.complete(EchoReply.newBuilder().setMessage(request.getMessage()).build());
                         }
                     };
