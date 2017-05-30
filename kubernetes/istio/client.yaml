@@ -1,0 +1,28 @@
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: vertx-grpc-echo-client
+  labels:
+    layer: client
+spec:
+  replicas: 1
+  template:
+    metadata:
+      name: vertx-grpc-echo-client
+      labels:
+        layer: client
+    spec:
+      containers:
+        - image: scholzj/vertx-grpc-echo:latest
+          name: vertx-grpc-echo-client
+          imagePullPolicy: Always
+          env:
+            - name: LOG_LEVEL
+              value: INFO
+            - name: SERVICE_TYPE
+              value: client
+            - name: GRPC_HOSTNAME
+              value: vertx-grpc-echo-server.default.svc.cluster.local
+            - name: GRPC_PORT
+              value: "8080"
