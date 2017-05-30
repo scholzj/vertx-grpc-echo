@@ -17,13 +17,6 @@ spec:
         - image: scholzj/vertx-grpc-echo:latest
           name: vertx-grpc-echo-client
           imagePullPolicy: Always
-          resources:
-            requests:
-              cpu: 100m
-              memory: 512Mi
-            limits:
-              cpu: 100m
-              memory: 512Mi
           env:
             - name: LOG_LEVEL
               value: INFO
