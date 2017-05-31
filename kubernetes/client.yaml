@@ -26,3 +26,5 @@ spec:
               value: vertx-grpc-echo-server
             - name: GRPC_PORT
               value: "8080"
+            - name: TIMEOUT
+              value: "100"
